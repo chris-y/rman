@@ -1,0 +1,48 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+ 
+jobs:
+  build_ppc:
+    runs-on: ubuntu-latest
+    container:
+      image: amigadev/crosstools:ppc-amigaos
+    name: build_os4
+    steps:
+      - uses: actions/checkout@v2
+      - name: build_os4
+        id: build_os4
+        run: make -f Makefile
+      - uses: actions/upload-artifact@v1
+        with:
+          name: rman_os4
+          path: ./rman
+  build_68k:
+    runs-on: ubuntu-latest
+    container:
+      image: amigadev/crosstools:m68k-amigaos
+    name: build_os3
+    steps:
+      - uses: actions/checkout@v2
+      - name: build_os3
+        id: build_os3
+        run: make -f Makefile
+      - uses: actions/upload-artifact@v1
+        with:
+          name: rman_os3
+          path: ./rman
+  build_guide:
+    runs-on: ubuntu-latest
+    name: build_guide
+    steps:
+      - uses: actions/checkout@v2
+      - name: build_native
+        id: build_native
+        run: make -f Makefile rman.guide
+      - uses: actions/upload-artifact@v1
+        with:
+          name: rman.guide
+          path: ./rman.guide
+          
