@@ -25,7 +25,7 @@ MANDIR = /usr/local/man/man1
 
 
 ### if you have GNU gcc, use these definitions
-CC = gcc -mcrt=newlib
+CC = gcc #-mcrt=newlib
 #CFLAGS = -O2 -finline-functions
 CFLAGS = -finline-functions
 
@@ -131,6 +131,9 @@ test: rman.c Makefile
 	rman -f html weirdman/hp-tbl.1 > /dev/null
 	rman -f html weirdman/Pnews.1 > /dev/null
 	nroff -man rman.1 | rman -f html > /dev/null
+
+rman.guide: rman rman.1
+	./rman -fAmigaGuide ./rman.1 >./rman.guide
 
 sww:
 	rm -f rman $(wildcard ~/bin/{sun4,snake,alpha}/rman)
