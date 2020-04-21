@@ -1,0 +1,31 @@
+Short:        PolyglotMan converts man pages to AmigaGuide etc
+Author:       Thomas Phelps, Amigaguide filter by Chris Young
+Uploader:     chris@unsatisfactorysoftware.co.uk (Chris Young)
+Type:         text/conv
+Version:      3.2-aguide
+Architecture: ppc-amigaos >= 4.0.0
+
+This version can create AmigaGuide files!
+
+rman -f AmigaGuide My_MAN_file.1 >My_AmigaGuide_file.txt (MAN to AmigaGuide)
+
+You may have to edit the resulting file to remove the spaces before the
+first @database command, seems to be a bug somewhere in the main code.
+
+.. Chris Young <chris@unsatisfactorysoftware.co.uk> 2007
+
+---ORIGINAL OS4 README--------------------------------------------------------------
+
+This is a tool that converts UNIX man pages into a lot of formats.
+Been looking for a decent one for a while now, thank god I found it, 
+editing man pages to be readable on AmigaOS ain't all that fun.
+Usage:
+
+rman -f ASCII My_MAN_file.1 >My_ASCII_file.txt (MAN to ASCII)
+rman -f HTML My_MAN_file.1 >My_HTML_file.txt   (MAN to HTML)
+rman -f XML My_MAN_file.1 >My_XML_file.txt     (MAN to XML)
+
+Etc. Etc. Check out the included docs for more info and options.
+
+.. Spot / Up Rough 2006
+
