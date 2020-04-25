@@ -100,6 +100,7 @@ distrib = $(srcs) $(libs) $(aux) contrib
 all:  rman
 	@echo 'Files made in current directory.'
 	@echo 'You should "make install".'
+	@echo 'For docs, make rman.guide'
 
 # everyone but me zaps assertions with the -DNDEBUG flag
 rman: rman.c Makefile
