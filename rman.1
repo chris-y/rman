@@ -61,7 +61,7 @@ Show version number and exit.
 \fIYou should specify the filter first, as this sets a number 
 of parameters, and then specify other options. 
 .TP 15
--f|--filter <ASCII|roff|TkMan|Tk|Sections|HTML|SGML|MIME|LaTeX|LaTeX2e|RTF|POD> 
+-f|--filter <ASCII|roff|TkMan|Tk|Sections|HTML|SGML|MIME|LaTeX|LaTeX2e|RTF|POD|AmigaGuide> 
 Set the output filter. Defaults to ASCII. 
 .TP 15
 -S|--source 
@@ -202,6 +202,11 @@ produce FrameMaker MIF, use FrameMaker's builtin filter. In both
 cases you need \fI[tn]roff \fR source, so if you only have a 
 formatted version of the manual page, use \fIPolyglotMan \fR's 
 roff filter first. 
+.SS "AmigaGuide "
+Output for Amiga native use.  Sometimes the file ends up with
+spaces before the first @database command which results in
+MultiView not recognising the file as AmigaGuide.
+Uses @wordwrap so won't display properly prior to v40. 
 .SH "EXAMPLES "
 To convert the \fIformatted \fR man page named \fIls.1 \fR back 
 into [tn]roff source form: 
