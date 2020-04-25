@@ -19,20 +19,20 @@ jobs:
         with:
           name: rman_os4
           path: ./rman
-  build_68k:
-    runs-on: ubuntu-latest
-    container:
-      image: amigadev/crosstools:m68k-amigaos
-    name: build_os3
-    steps:
-      - uses: actions/checkout@v2
-      - name: build_os3
-        id: build_os3
-        run: make -f Makefile
-      - uses: actions/upload-artifact@v1
-        with:
-          name: rman_os3
-          path: ./rman
+#  build_68k:
+#    runs-on: ubuntu-latest
+#    container:
+#      image: amigadev/crosstools:m68k-amigaos
+#    name: build_os3
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: build_os3
+#        id: build_os3
+#        run: make -f Makefile
+#      - uses: actions/upload-artifact@v1
+#        with:
+#          name: rman_os3
+#          path: ./rman
   build_guide:
     runs-on: ubuntu-latest
     name: build_guide
