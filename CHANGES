@@ -116,3 +116,20 @@
 	discontinue support for Mac OS 9 and earlier (compiles out of the box on OS X)
 25	tags well nested for troff source input (at last!)
 26	release version 3.2
+
+2007 
+    added AmigaGuide support by Chris Young
+	compiled for MorphOS
+
+2008
+    improvements to work with AmigaOS 4 by Chris Young
+    compiled for AmigaOS 4
+
+2021
+    improvements to work with AROS by Eugene aGGreSSor Sobolev
+	- Installer script
+    - AmigaDOS version support
+	- AmigaDOS specific help ?
+	- RMAN Tools for conversion from WB
+
+    compiled for AROS

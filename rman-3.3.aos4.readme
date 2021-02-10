@@ -1,0 +1,106 @@
+Short:        Converting man pages to many formats
+Author:       Thomas Phelps
+Uploader:     aGGreSSor/CPU (amitrans@narod.ru)
+Type:         text/misc
+Version:      3.3
+Requires:     AmigaOS 4.x; InstallerLG, IconX
+Architecture: ppc-amigaos >= 4.0.0
+Distribution: aminet
+
+============================== F E A T U R E S ==============================
+
+PolyglotMan takes man pages from most of the popular flavors of UNIX and
+transforms them into any of a number of text source formats. PolyglotMan
+was formerly known as RosettaMan. The name of the binary is still called
+rman , for scripts that depend on that name; mnemonically, just think
+"reverse man". Previously PolyglotMan required pages to be formatted by
+nroff prior to its processing. With version 3.x, it prefers [tn]roff source
+and usually produces results that are better yet. And source processing is
+the only way to translate tables. Source format translation is not as
+mature as formatted, however, so try formatted translation as a backup
+
+This version 3.3 is able to convert man pages to:
+
+- ASCII      -- plain text
+- TkMan      -- Tk format wrapped with commands
+- Tk         -- just emit list of text-tags pairs
+- Sections   -- simple plain text reformat
+- Roff       -- primitive analogue of roff
+- HTML       -- HTML 4.0 standard document
+- XML        -- DocBook XML support by by Aaron Hawley
+- MIME       -- generates MIME compliant to RFC 1563
+- LaTeX      -- typical LaTeX
+- LaTeX2e    -- rest same as old LaTeX
+- RTF        -- Rich Text Format (RTF) could use more work
+- pod        -- Perl 5 pod, plain old documentation format
+- AmigaGuide -- AmigaGuide support by Chris Young
+
+Filters excluded from the application:
+
+- PostScript -- Use groff or psroff to generate PostScript
+- FrameMaker -- FrameMaker comes with filters that convert from roff to MIF
+
+============================ R E Q U I R E M E N T ==========================
+
+PolyglotMan tested and worked fine on the following configurations:
+
+- AmigaOS 4.1 Final Edition (Kickstart 53.70, Workbench 53.18)
+
+================================= U S A G E =================================
+
+In Workbench (or Wanderer) you can use a RMAN tool-script by aGGreSSor
+It's more convenient for conversion to Text, RTF, AmigaGuide, HTML or XML.
+(Optional) installation can be done by clicking on the "Install" icon.
+
+You can improve a man pages conversion to HTML if you use RMAN for man->RTF
+conversion and use RTF2HTML (from RTF-riddle package) for RTF->HTML 5.0.
+
+PolyglotMan is not perfect in all cases, but it usually does a good job,
+and in any case reduces the problem of converting man pages to light editing.
+
+You may need to delete all text from the beginning of the man-file to .TH tag
+in the source man-file for getting the best conversion.  This  is  especially
+true for the AmigaGuide because unrecognized tags appearing in man pages 
+after 2003 will be converted to spaces. An AmigaGuide file that starts with
+spaces will not open.
+
+However, all filters are available to you from CLI
+AmigaOS 4 release improvements AmigaDOS version and help ? support
+
+rman [ options ] [ file ]
+
+[-f <filter>]
+
+One of the following filters:
+<ASCII|roff|TkMan|Tk|Sections|HTML|XML|MIME|LaTeX|LaTeX2e|RTF|pod|AmigaGuide>
+
+[-S(ource of man page passed in)   [-F(ormatted man page passed in)]
+[-r <man reference printf string>] [-i <title printf string>]
+[-V(olume) <colon-separated list>] [-U(RLs as hyperlinks)]
+[-b (show subsections)]            [-k(eep head/foot)]
+[-n(ame of man page) <string>]     [-s(ection) <string>]
+[-p(aragraph mode toggle)]         [-t(abstops spacing) <number>]
+[-N(ormalize spacing, changebars)] [-y(zap hyphens toggle)]
+[-K (declare that page has no breaks)]
+[-d(iff) <file> (diff of old page source to incorporate)]
+[-M(essage) <text> (included verbatim at end of Name section)]
+[-R(ebus words for TkMan)]
+[-o (no op)] [-O <arg> (no op with arg)]
+[-q(uiet--don't report warnings)] [-h(elp)] [-v(ersion)]
+[<filename>]
+
+================================ S O U R C E ================================
+
+Based on previous versions from aminet:
+http://aminet.net/package/text/misc/rman
+http://aminet.net/package/text/misc/rman-aguide
+http://aminet.net/package/text/misc/rman_3.2_mos
+
+AmigaOS 4 release created by
+
+        ______ ______              ______ ______ 
+ ______|:: .__|:: .__|_____ ______|:: ___|:: ___|______ _____ 
+|: ,   |:  |  |:  |  |:  ,_|:  ,__|:___  |:___  |:  -  |:  ,_|
+|__|___|______|______|___|   _____|______|______|______|___|
+
+                home cross-compilation factory
