@@ -87,7 +87,7 @@ RM = rm
 #
 #--------------------------------------------------
 
-version = 3.2
+version = 3.3
 rman = rman-$(version)
 srcs = rman.c
 objs = rman
